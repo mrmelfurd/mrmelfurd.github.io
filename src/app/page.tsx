@@ -1,4 +1,11 @@
 "use client";
+
+type GalleryImage = {
+  src: string;
+  title: string;
+  description: string;
+  alt: string;
+};
 import Head from "next/head";
 import { useState } from "react";
 const groupPhoto = {
@@ -81,11 +88,12 @@ const galleryImages = [
     alt: "Open fermentation of red wine",
   },
 ];
+
 export default function Home() {
-  const [modalImg, setModalImg] = useState(null);
+  const [modalImg, setModalImg] = useState<GalleryImage | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 
-  const openModal = (img) => {
+  const openModal = (img: GalleryImage) => {
     setModalImg(img);
     setModalOpen(true);
   };

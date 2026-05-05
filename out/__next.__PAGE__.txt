@@ -1,5 +1,9 @@
 1:"$Sreact.fragment"
-2:I[97367,["/_next/static/chunks/0fsi8lw5utejl.js","/_next/static/chunks/0d3tkj33oycf2.js"],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"flex flex-col items-center justify-center min-h-screen bg-zinc-50 dark:bg-black px-4 py-12","children":["$","div",null,{"className":"flex flex-col items-center bg-white dark:bg-zinc-900 rounded-2xl shadow-lg p-8 max-w-xl w-full","children":[["$","h1",null,{"className":"text-4xl font-bold text-zinc-900 dark:text-zinc-100 mb-2","children":"Hi, I'm Your Name!"}],["$","p",null,{"className":"text-zinc-600 dark:text-zinc-300 text-center mb-6","children":["Welcome to my personal About Me page. Learn more ",["$","a",null,{"href":"/about","className":"text-blue-600 dark:text-blue-400 hover:underline","children":"about me"}],"."]}]]}]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"OKxhm5SjXMLELNm8w557H"}
-4:null
+2:I[47257,["/_next/static/chunks/0.oojvfpk94wy.js","/_next/static/chunks/0d3tkj33oycf2.js"],"ClientPageRoot"]
+3:I[52683,["/_next/static/chunks/0.oojvfpk94wy.js","/_next/static/chunks/0d3tkj33oycf2.js","/_next/static/chunks/0qo1d05~enpe5.js"],"default"]
+6:I[97367,["/_next/static/chunks/0.oojvfpk94wy.js","/_next/static/chunks/0d3tkj33oycf2.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/0qo1d05~enpe5.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"oC-OIwFSGiiEYCTVx43JJ"}
+4:{}
+5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
+8:null
