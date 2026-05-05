@@ -12,7 +12,7 @@ export default function AboutMe() {
           className="rounded-full border-4 border-zinc-200 dark:border-zinc-700 mb-4"
           priority
         />
-        <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Your Name</h1>
+        <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2">Mel Chi</h1>
         <p className="text-zinc-600 dark:text-zinc-300 text-center mb-6">
           A short bio about yourself. Passionate developer, lifelong learner, and open source enthusiast. Replace this with your own story!
         </p>
@@ -39,7 +39,7 @@ export default function AboutMe() {
           <div className="flex flex-col items-center gap-2">
             <a href="mailto:your.email@example.com" className="text-blue-600 dark:text-blue-400 hover:underline">your.email@example.com</a>
             <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">github.com/yourusername</a>
-            {/* Add more contact links as needed */}
+            <a href="https://www.linkedin.com/in/chimel/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">LinkedIn</a>
           </div>
         </section>
       </div>
