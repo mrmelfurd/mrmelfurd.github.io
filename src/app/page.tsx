@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useState } from "react";
 const groupPhoto = {
   src: "/vineyard/group-photo.jpeg",
   title: "Harvest Group Photo",
@@ -80,6 +81,18 @@ const galleryImages = [
   },
 ];
 export default function Home() {
+  const [modalImg, setModalImg] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = (img) => {
+    setModalImg(img);
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+    setModalImg(null);
+  };
+
   return (
     <>
       <Head>
@@ -106,11 +119,17 @@ export default function Home() {
           {galleryImages.map((img, idx) => (
             <div className="col d-flex align-items-stretch" key={idx}>
               <div className="card h-100 shadow-sm" style={{ minWidth: 0 }}>
-                {img.title === "Harvest in Action" ? (
-                  <img src={img.src} className="card-img-top" alt={img.alt} style={{ width: '100%', height: 'auto', objectFit: 'contain', maxHeight: '350px' }} />
-                ) : (
-                  <img src={img.src} className="card-img-top" alt={img.alt} style={{ objectFit: 'cover', height: '180px' }} />
-                )}
+                <img
+                  src={img.src}
+                  className="card-img-top cursor-pointer"
+                  alt={img.alt}
+                  style={img.title === "Harvest in Action"
+                    ? { width: '100%', height: 'auto', objectFit: 'contain', maxHeight: '350px' }
+                    : { objectFit: 'cover', height: '180px' }
+                  }
+                  onClick={() => openModal(img)}
+                  title="Click to view full size"
+                />
                 <div className="card-body p-2">
                   <h6 className="card-title mb-1" style={{ fontSize: '1rem' }}>{img.title}</h6>
                   <p className="card-text mb-0" style={{ fontSize: '0.95rem' }}>{img.description}</p>
@@ -118,6 +137,34 @@ export default function Home() {
               </div>
             </div>
           ))}
+              {/* Modal for full-size image */}
+              {modalOpen && modalImg && (
+                <div
+                  className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+                  onClick={closeModal}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <div
+                    className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-4 relative max-w-3xl w-full flex flex-col items-center"
+                    onClick={e => e.stopPropagation()}
+                  >
+                    <button
+                      className="absolute top-2 right-2 text-2xl text-zinc-700 dark:text-zinc-200 hover:text-red-500"
+                      onClick={closeModal}
+                      aria-label="Close"
+                    >
+                      &times;
+                    </button>
+                    <img
+                      src={modalImg.src}
+                      alt={modalImg.alt}
+                      style={{ maxWidth: '90vw', maxHeight: '70vh', objectFit: 'contain', borderRadius: '0.5rem' }}
+                    />
+                    <h6 className="mt-3 font-bold text-lg text-center">{modalImg.title}</h6>
+                    <p className="text-center mb-0">{modalImg.description}</p>
+                  </div>
+                </div>
+              )}
         </div>
       </div>
 
