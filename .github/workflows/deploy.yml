@@ -17,19 +17,12 @@ jobs:
         with:
           node-version: 20
 
+          
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static site
-        run: npm run build
-
-      - name: Prepare out directory
-        run: |
-          mkdir -p out/about
-          cp .next/server/app/index.html out/index.html
-          cp .next/server/app/about.html out/about/index.html
-          cp -R public/* out/ || true
-          cp -R .next/static out/static
+      - name: Build and export static site
+        run: npm run build && npm run export
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
